@@ -1,0 +1,6 @@
+---
+app_user: "pgoel"
+http_host: "365code.in"
+http_conf: "365code.in.conf"
+http_port: "80"
+disable_default: true
