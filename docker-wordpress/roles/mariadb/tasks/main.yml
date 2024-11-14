@@ -7,16 +7,10 @@
   apt: name={{item}}
   with_items:
     - mariadb-server
-    - python3-apt
+    - python3-mysqldb
     # - PyMysql
-#     - build-essential
-#     - python-pip
-#     - libmysqlclient-dev
-
-- name: Install the MySQL-python through pip
-  python3-apt: name="{{ item }}" state=forcereinstall
-  with_items:
-    - MySQL-python
+    - build-essential
+    - libmysqlclient-dev
 
 - name: Start MariaDB Service
   service: name=mysql state=started enabled=yes
