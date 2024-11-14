@@ -1,4 +1,8 @@
 ---
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
 ## installs and sets up Mariadb
 - name: Install MariaDB package
   apt: name={{item}} state=latest
@@ -9,16 +13,16 @@
 - name: Start MariaDB Service
   service: name=mysql state=started enabled=yes
 
-- name: Create random password for root user
-  command: php -r "echo md5(random_bytes(10));"
-  register: mysql_root_password
+# - name: Create random password for root user
+#   command: php -r "echo md5(random_bytes(10));"
+#   register: mysql_root_password
 
 # localhost needs to be the last item for idempotency
 - name: Update mysql root password for all root accounts
   mysql_user:
       name: root
       host: "{{ item }}"
-      password: "{{ mysql_root_password.stdout }}"
+      password: "{{ wp_db_psw }}"
   with_items:
     - "{{ ansible_hostname }}"
     - 127.0.0.1
