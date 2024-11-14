@@ -1,4 +1,7 @@
 ---
+- name: Update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+
 ## installs and sets up Mariadb
 - name: Install MariaDB package
   apt: name={{item}} state=latest
