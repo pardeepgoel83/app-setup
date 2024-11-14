@@ -4,6 +4,7 @@
   apt: name={{item}} state=latest
   with_items:
     - mariadb-server
+    - MySQL-python
 #     - build-essential
 #     - python-pip
 #     - libmysqlclient-dev
