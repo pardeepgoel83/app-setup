@@ -4,9 +4,10 @@
 
 ## installs and sets up Mariadb
 - name: Install MariaDB package
-  apt: name={{item}} state=latest
+  apt: name={{item}}
   with_items:
     - mariadb-server
+    - python-apt
     - PyMysql
 #     - build-essential
 #     - python-pip
