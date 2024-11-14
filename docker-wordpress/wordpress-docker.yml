@@ -44,6 +44,6 @@
 
   roles:
   - python
-  - mariadb
   - docker
+  - mariadb
   - wordpress-docker
