@@ -22,6 +22,4 @@ wordpress:
       - WORDPRESS_TABLE_PREFIX={{ wp_db_tb_pre }}
       - WORDPRESS_DB_HOST={{ wp_db_host }}
       - WORDPRESS_DB_PASSWORD={{ wp_db_psw }}
-    links:
-      - mysql
     restart: always
