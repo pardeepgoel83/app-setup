@@ -4,6 +4,9 @@
   apt: name={{item}} state=latest
   with_items:
     - mariadb-server
+    - build-essential
+    - python-dev
+    - libmysqlclient-dev
     - python-mysqldb
 
 - name: Start MariaDB Service
