@@ -5,9 +5,17 @@
   with_items:
     - mariadb-server
     - build-essential
-    - python-dev
+    - python-pip
     - libmysqlclient-dev
-    - python-mysqldb
+
+- name: Install the MySQL-python through pip
+  sudo: yes
+  pip:
+    name: "{{ item }}"
+    state: forcereinstall
+  with_items:
+    - pip
+    - MySQL-python
 
 - name: Start MariaDB Service
   service: name=mysql state=started enabled=yes
