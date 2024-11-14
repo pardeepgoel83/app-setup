@@ -10,16 +10,6 @@ nginx:
         - wordpress
     restart: always
 
-mysql:
-    image: mariadb
-    ports:
-      - '3306:3306'
-    volumes:
-      - ./wp-db-data:/var/lib/mysql
-    environment:
-      - MYSQL_ROOT_PASSWORD={{ wp_db_psw }}
-    restart: always
-
 wordpress:
     image: wordpress:{{ wp_version }}-php8.1-fpm
     ports:
