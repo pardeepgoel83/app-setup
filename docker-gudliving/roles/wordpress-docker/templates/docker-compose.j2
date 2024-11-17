@@ -13,7 +13,7 @@ nginx:
 wordpress:
     image: wordpress:{{ wp_version }}-php8.1-fpm
     ports:
-      - '9000:9000'
+      - '9001:9001'
     volumes:
       - ./wordpress:/var/www/html
     environment:
