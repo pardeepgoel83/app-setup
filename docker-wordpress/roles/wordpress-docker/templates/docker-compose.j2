@@ -1,5 +1,6 @@
 nginx:
     image: nginx:latest
+    validate="/usr/sbin/nginx -c %s -t"
     ports:
         - '80:80'
     volumes:
