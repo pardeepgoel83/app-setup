@@ -11,14 +11,12 @@
   with_items:
   - wordpress
   - wp-db-data
-  - nginx
-  - logs/nginx
   tags:
     - dir_ops
 
-- name: create docker-compose.yml file
+- name: create docker-compose-wordpress.yml file
   file:
-    path: "{{ compose_project_dir }}/docker-compose.yml"
+    path: "{{ compose_project_dir }}/docker-compose-wordpress.yml"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
     state: touch
@@ -27,26 +25,16 @@
 
 - name: deploy Docker Compose project for (Wordpress/MariaDB/Nginx containers)
   template:
-    src: docker-compose.j2
-    dest: "{{ compose_project_dir }}/docker-compose.yml"
+    src: docker-compose-wordpress.j2
+    dest: "{{ compose_project_dir }}/docker-compose-wordpress.yml"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
     mode: 0644
   tags:
     - deploy_compose
 
-- name: deploy WordPress Nginx virtual host
-  template:
-    src: wordpress-nginx.j2
-    dest: "{{ compose_project_dir }}/nginx/wordpress.conf"
-    owner: "{{ system_user }}"
-    group: "{{ system_user }}"
-    mode: 0644
-  tags:
-    - gen_nginx
-
 - name: Run docker-compose up
-  command: docker-compose -f docker-compose.yml up -d --remove-orphans
+  command: docker-compose -f docker-compose-wordpress.yml up -d --remove-orphans
   args:
     chdir: "{{ compose_project_dir }}"
   tags:

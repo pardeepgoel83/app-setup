@@ -1,16 +1,3 @@
-nginx:
-    image: nginx:latest
-    validate="/usr/sbin/nginx -c %s -t"
-    ports:
-        - '80:80'
-    volumes:
-        - ./nginx:/etc/nginx/conf.d
-        - ./logs/nginx:/var/log/nginx
-        - ./wordpress:/var/www/html
-    links:
-        - wordpress
-    restart: always
-
 wordpress:
     image: wordpress:{{ wp_version }}-php8.1-fpm
     ports:
