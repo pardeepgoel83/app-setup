@@ -1,0 +1,6 @@
+---
+app_user: "pgoel"
+http_host: "gudliving.in"
+http_conf: "gudliving.in.conf"
+http_port: "80"
+disable_default: true
