@@ -1,0 +1,14 @@
+---
+system_user: pgoel
+compose_project_dir: /home/{{ system_user }}/compose-wordpress-gudliving
+
+domain: gudliving.in
+wp_version: 6.6.2
+wp_db_name: wordpress-gudliving
+wp_db_tb_pre: wp_
+wp_db_host: 157.173.220.220
+wp_db_user: root
+wp_db_psw: Target@2021
+
+# If you want to specify all variables without interactive prompts, can you
+# do so by using: --extra-vars
