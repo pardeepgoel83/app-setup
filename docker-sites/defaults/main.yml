@@ -1,0 +1,21 @@
+---
+system_user: pgoel
+ansible_hostname: 157.173.220.220
+compose_project_dir: /home/{{ system_user }}/compose-wordpress
+wp_db_host: 157.173.220.220
+wp_db_user: root
+wp_db_psw: Target2021
+
+sites:
+  - domain: 365code.in
+    wp_version: 6.6.2
+    wp_db_name: wordpress-365code
+    wp_db_tb_pre: wp365code_
+    wp_port: 9000
+  - domain: gudliving.in
+    wp_version: 6.6.2
+    wp_db_name: wordpress-gudliving
+    wp_db_tb_pre: wpgudliving_
+    wp_port: 9001
+# If you want to specify all variables without interactive prompts, can you
+# do so by using: --extra-vars
