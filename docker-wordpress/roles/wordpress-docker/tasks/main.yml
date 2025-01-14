@@ -9,10 +9,10 @@
     recurse: yes
     mode: 0755
   with_items:
-  - wordpress
-  - wp-db-data
-  - nginx
-  - logs/nginx
+    - wordpress
+    - wp-db-data
+    - nginx
+    - logs/nginx
   tags:
     - dir_ops
 
@@ -46,7 +46,7 @@
     - gen_nginx
 
 - name: Run docker-compose up
-  command: docker-compose -f docker-compose.yml up -d --remove-orphans
+  command: docker-compose -f docker-compose.yml up -d
   args:
     chdir: "{{ compose_project_dir }}"
   tags:
