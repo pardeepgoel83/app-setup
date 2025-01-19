@@ -1,0 +1,36 @@
+---
+# setup compose dir structure
+- name: setup compose dir structure
+  file:
+    path: "{{ compose_project_dir }}/{{ project.dir }}/{{ item }}"
+    state: directory
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    recurse: yes
+    mode: 0755
+  with_items:
+    - wordpress
+    - wp-db-data
+    - nginx
+    - logs/nginx
+  tags:
+    - dir_ops
+
+- name: create docker-compose.yml file
+  file:
+    path: "{{ compose_project_dir }}/{{ project.dir }}/docker-compose.yml"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    state: touch
+  tags:
+    - file_ops
+
+- name: deploy Docker Compose project for (Wordpress/MariaDB/Nginx containers)
+  template:
+    src: docker-compose.j2
+    dest: "{{ compose_project_dir }}/{{ project.dir }}/docker-compose-{{ project.domain }}.yml"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: 0644
+  tags:
+    - deploy_compose

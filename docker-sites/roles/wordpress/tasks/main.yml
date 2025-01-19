@@ -1,18 +1,10 @@
 ---
 # setup compose dir structure
-- name: setup compose dir structure
-  file:
-    path: "{{ compose_project_dir }}/{{ item }}"
-    state: directory
-    owner: "{{ system_user }}"
-    group: "{{ system_user }}"
-    recurse: yes
-    mode: 0755
-  with_items:
-    - wordpress
-    - wp-db-data
-    - nginx
-    - logs/nginx
+- name: setup compose dir structure and required files
+  include_tasks: directory.yml
+  loop: "{{ projects }}""
+  loop_control:
+    loop_var: project
   tags:
     - dir_ops
 

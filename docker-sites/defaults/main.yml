@@ -6,13 +6,15 @@ wp_db_host: 157.173.220.220
 wp_db_user: root
 wp_db_psw: Target2021
 
-sites:
-  - domain: 365code.in
+projects:
+  - dir: 365code
+    domain: 365code.in
     wp_version: 6.6.2
     wp_db_name: wordpress-365code
     wp_db_tb_pre: wp365code_
     wp_port: 9000
-  - domain: gudliving.in
+  - dir: gudliving
+    domain: gudliving.in
     wp_version: 6.6.2
     wp_db_name: wordpress-gudliving
     wp_db_tb_pre: wpgudliving_
