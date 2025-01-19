@@ -1,0 +1,9 @@
+---
+# setup compose dir structure
+- name: setup compose dir structure and required files
+  include_tasks: nginx.yml
+  loop: "{{ projects }}"
+  loop_control:
+    loop_var: project
+  tags:
+    - gen_nginx
