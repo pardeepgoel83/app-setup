@@ -1,7 +1,7 @@
 wordpress:
     image: wordpress:{{ project.wp_version }}-php8.1-fpm
     ports:
-      - '9000:9000'
+      - '{{ project.port }}:{{ project.port }}'
     volumes:
       - ./wordpress:/var/www/html
     environment:
