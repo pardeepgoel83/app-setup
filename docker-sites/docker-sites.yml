@@ -47,3 +47,4 @@
     # - mariadb
     # - docker
     - wordpress
+    - nginx
