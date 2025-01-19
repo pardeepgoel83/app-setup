@@ -1,7 +1,7 @@
 - name: deploy WordPress Nginx virtual host
   template:
     src: nginx.j2
-    dest: "{{ compose_project_dir }}/{{ project.dir }}/nginx/wordpress.conf"
+    dest: "{{ compose_project_dir }}/nginx/{{ project.domain }}.conf"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
     mode: 0644

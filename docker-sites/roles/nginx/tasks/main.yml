@@ -1,9 +1,44 @@
 ---
-# setup compose dir structure
-- name: setup compose dir structure and required files
+# setup nginx dir structure
+- name: setup compose dir structure
+  file:
+    path: "{{ compose_project_dir }}/{{ item }}"
+    state: directory
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    recurse: yes
+    mode: 0755
+  with_items:
+    - nginx
+    - logs/nginx
+  tags:
+    - dir_ops_nginx
+
+- name: setup required files
   include_tasks: nginx.yml
   loop: "{{ projects }}"
   loop_control:
     loop_var: project
   tags:
     - gen_nginx
+
+- name: deploy Docker Compose project for (Wordpress)
+  template:
+    src: docker-compose.j2
+    dest: "{{ compose_project_dir }}/nginx/docker-compose.yml"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: 0644
+  tags:
+    - deploy_compose_nginx
+
+- name: Run docker-compose up
+  command: docker-compose -f docker-compose.yml up -d
+  args:
+    chdir: "{{ compose_project_dir }}/nginx"
+  tags:
+    - compose_run_nginx
+
+- name: giving some time for project (all 3 containers) to start-up
+  pause:
+    seconds: 10
