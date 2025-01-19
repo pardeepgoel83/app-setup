@@ -4,3 +4,5 @@ server1 ansible_host=157.173.220.220
 157.173.220.220 ansible_ssh_user=pgoel
 [wordpress]
 157.173.220.220 ansible_ssh_user=pgoel
+[projects]
+157.173.220.220 ansible_ssh_user=pgoel
