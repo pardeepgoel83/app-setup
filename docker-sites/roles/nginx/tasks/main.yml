@@ -39,6 +39,6 @@
   tags:
     - compose_run_nginx
 
-- name: giving some time for project (all 3 containers) to start-up
+- name: giving some time for nginx to start-up
   pause:
-    seconds: 10
+    seconds: 2

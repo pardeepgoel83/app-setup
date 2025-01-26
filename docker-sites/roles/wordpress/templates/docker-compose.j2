@@ -3,7 +3,7 @@ wordpress:
     ports:
       - '{{ project.port }}:{{ project.port }}'
     volumes:
-      - ./wordpress:/var/www/html
+      - ./wordpress:/var/www/html/{{ project.domain }}
     environment:
       - WORDPRESS_DB_NAME={{ project.wp_db_name }}
       - WORDPRESS_DB_USER={{ wp_db_user }}
