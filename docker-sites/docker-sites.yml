@@ -43,8 +43,8 @@
     #   confirm: yes
 
   roles:
-    - python
-    - mariadb
-    - docker
-    - wordpress
+    # - python
+    # - mariadb
+    # - docker
+    # - wordpress
     - nginx
