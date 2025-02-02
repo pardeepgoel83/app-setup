@@ -2,7 +2,7 @@ server {
   listen 80;
   server_name {{ project.domain }};
 
-  root /var/www/html/{{ project.domain }}
+  root "/var/www/html/{{ project.domain }}"
   index index.php;
 
   access_log /var/log/nginx/{{ project.domain | replace(".", "-") }}-access.log;
