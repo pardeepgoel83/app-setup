@@ -1,5 +1,5 @@
 server {
-  resolver {{ project.domain }} valid=30s;
+  resolver {{ wp_db_host }} valid=30s;
   listen 80;
   server_name {{ project.domain }};
 
