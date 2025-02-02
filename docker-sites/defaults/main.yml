@@ -16,7 +16,7 @@ projects:
   #   port: 9000
   - dir: gudliving
     domain: gudliving.in
-    cgipass: gudliving
+    cgipass: projects
     wp_version: 6.6.2
     wp_db_name: wordpress-gudliving
     wp_db_tb_pre: wpgudliving_
