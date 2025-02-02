@@ -2,5 +2,5 @@ FROM nginx:latest
 
 {#CONTEXT: {{ projects }}#}
 {% for project in projects %}
-[RUN mkdir /var/www/html/{{ project.domain }}]
+RUN mkdir /var/www/html/{{ project.domain }}
 {% endfor %}
