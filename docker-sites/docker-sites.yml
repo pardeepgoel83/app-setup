@@ -46,5 +46,5 @@
     # - python
     # - mariadb
     # - docker
-    # - wordpress
     - nginx
+    # - wordpress

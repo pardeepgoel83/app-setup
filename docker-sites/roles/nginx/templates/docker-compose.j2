@@ -1,8 +1,15 @@
-nginx:
-  build: .
-  ports:
-    - '80:80'
-  volumes:
-    - ./nginx:/etc/nginx/conf.d
-    - ./logs/nginx:/var/log/nginx
-  restart: always
+version: '3'
+
+services:
+  nginx:
+    build: .
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs/nginx:/var/log/nginx
+    restart: always
+
+networks:
+  proxy_network:
+    driver: bridge
