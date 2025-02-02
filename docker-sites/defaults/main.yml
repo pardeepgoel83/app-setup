@@ -14,12 +14,12 @@ projects:
     wp_db_name: wordpress-365code
     wp_db_tb_pre: wp365code_
     port: 9000
-  - dir: gudliving
-    domain: gudliving.in
-    cgipass: gudliving
-    wp_version: 6.6.2
-    wp_db_name: wordpress-gudliving
-    wp_db_tb_pre: wpgudliving_
-    port: 9001
+  # - dir: gudliving
+  #   domain: gudliving.in
+  #   cgipass: gudliving
+  #   wp_version: 6.6.2
+  #   wp_db_name: wordpress-gudliving
+  #   wp_db_tb_pre: wpgudliving_
+  #   port: 9001
 # If you want to specify all variables without interactive prompts, can you
 # do so by using: --extra-vars
