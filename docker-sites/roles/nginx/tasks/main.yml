@@ -33,6 +33,16 @@
   tags:
     - deploy_file_nginx
 
+- name: deploy nginx common config File for all projects
+  template:
+    src: nginx-common.j2
+    dest: "{{ compose_project_dir }}/nginx/nginx/common.conf"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: 0644
+  tags:
+    - config_common_file_nginx
+
 - name: deploy Docker Compose project for (Wordpress)
   template:
     src: docker-compose.j2
