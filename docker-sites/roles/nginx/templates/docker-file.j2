@@ -1,0 +1,4 @@
+{#CONTEXT: {{ projects }}#}
+{% for project in projects.items() %}
+[RUN mkdir /var/www/html/{{ project.domain }}]
+{% endfor %}

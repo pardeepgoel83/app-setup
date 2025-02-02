@@ -23,6 +23,16 @@
   tags:
     - gen_nginx
 
+- name: deploy Docker File for all projects
+  template:
+    src: docker-file.j2
+    dest: "{{ compose_project_dir }}/nginx/DockerFile"
+    owner: "{{ system_user }}"
+    group: "{{ system_user }}"
+    mode: 0644
+  tags:
+    - deploy_file_nginx
+
 - name: deploy Docker Compose project for (Wordpress)
   template:
     src: docker-compose.j2
