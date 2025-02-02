@@ -1,4 +1,5 @@
 server {
+  resolver {{ project.domain }} valid=30s;
   listen 80;
   server_name {{ project.domain }};
 
