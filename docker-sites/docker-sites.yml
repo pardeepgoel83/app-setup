@@ -1,5 +1,5 @@
 ---
-- hosts: projects
+- hosts: wordpress
 
   vars_files:
     - defaults/main.yml
