@@ -26,7 +26,7 @@
 - name: deploy Docker File for all projects
   template:
     src: docker-file.j2
-    dest: "{{ compose_project_dir }}/nginx/DockerFile"
+    dest: "{{ compose_project_dir }}/nginx/Dockerfile"
     owner: "{{ system_user }}"
     group: "{{ system_user }}"
     mode: 0644
