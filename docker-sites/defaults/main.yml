@@ -7,13 +7,13 @@ wp_db_user: root
 wp_db_psw: Target2021
 
 projects:
-  # - dir: 365code
-  #   domain: 365code.in
-  #   cgipass: 365code
-  #   wp_version: 6.6.2
-  #   wp_db_name: wordpress-365code
-  #   wp_db_tb_pre: wp365code_
-  #   port: 9000
+  - dir: 365code
+    domain: 365code.in
+    cgipass: localhost
+    wp_version: 6.6.2
+    wp_db_name: wordpress-365code
+    wp_db_tb_pre: wp365code_
+    port: 9000
   - dir: gudliving
     domain: gudliving.in
     cgipass: localhost
