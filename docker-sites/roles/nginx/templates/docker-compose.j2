@@ -1,9 +1,8 @@
 nginx:
-    image: nginx:latest
-    build: .
-    ports:
-        - '80:80'
-    volumes:
-        - ./nginx:/etc/nginx/conf.d
-        - ./logs/nginx:/var/log/nginx
-    restart: always
+  build: .
+  ports:
+    - '80:80'
+  volumes:
+    - ./nginx:/etc/nginx/conf.d
+    - ./logs/nginx:/var/log/nginx
+  restart: always

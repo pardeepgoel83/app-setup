@@ -1,3 +1,5 @@
+FROM nginx:latest
+
 {#CONTEXT: {{ projects }}#}
 {% for project in projects %}
 [RUN mkdir /var/www/html/{{ project.domain }}]
