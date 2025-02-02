@@ -9,6 +9,8 @@ services:
       - ./nginx:/etc/nginx/conf.d
       - ./logs/nginx:/var/log/nginx
     restart: always
+    networks:
+      - proxy_network
 
 networks:
   proxy_network:
