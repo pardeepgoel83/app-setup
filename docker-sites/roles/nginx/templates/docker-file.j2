@@ -2,7 +2,7 @@ FROM nginx:latest
 
 {#CONTEXT: {{ projects }}#}
 {% for project in projects %}
-RUN mkdir /var/www/html/{{ project.domain }}
+RUN mkdir -p /var/www/html/{{ project.domain }}
 RUN chmod -R 0644 /var/www/html/{{ project.domain }}
 RUN chown -R {{ system_user }}:{{ system_user }} /var/www/html/{{ project.domain }}
 {% endfor %}
